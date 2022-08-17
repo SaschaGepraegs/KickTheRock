@@ -1,15 +1,14 @@
-var KlickAnzahl;
-if (localStorage.getItem("Anzahl") == null) {
-    localStorage.setItem("Anzahl", 0);
-} else {
-    KlickAnzahl = localStorage.getItem("Anzahl")
+function refresh() {
+    document.getElementById("counter").innerHTML = "Dein Score: " + localStorage.clickcount;
 }
 
-document.getElementById("counter").innerHTML = "Dein Score: " + KlickAnzahl;
+if (localStorage.clickcount) {} else {
+    localStorage.clickcount = 1;
+}
+
+refresh();
 
 function klick() {
-    KlickAnzahl++;
-    console.log("test");
-    localStorage.setItem("Anzahl", KlickAnzahl)
-    document.getElementById("counter").innerHTML = "Dein Score: " + KlickAnzahl;
+    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+    refresh();
 }
