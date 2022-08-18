@@ -3,7 +3,7 @@ function refresh() {
 }
 
 if (localStorage.getItem("clickcount")) {} else {
-    localStorage.getItem("clickcount") = 1;
+    localStorage.setItem("clickcount", "1");
 }
 
 refresh();
