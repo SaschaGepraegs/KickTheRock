@@ -1,14 +1,14 @@
 function refresh() {
-    document.getElementById("counter").innerHTML = "Dein Score: " + localStorage.clickcount;
+    document.getElementById("counter").innerHTML = "Dein Score: " + localStorage.getItem("clickcount");
 }
 
-if (localStorage.clickcount) {} else {
-    localStorage.clickcount = 1;
+if (localStorage.getItem("clickcount")) {} else {
+    localStorage.getItem("clickcount") = 1;
 }
 
 refresh();
 
 function klick() {
-    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+    localStorage.getItem("clickcount") = Number(localStorage.getItem("clickcount")) + 1;
     refresh();
 }
